@@ -26,7 +26,8 @@ export default function BattlePage() {
 
       {/* Remove old test messages */}
       {/* Always show the BattleGame component */}
-      <BattleGame mode={mode} />
+      <BattleGame />
+
     </div>
   );
 }

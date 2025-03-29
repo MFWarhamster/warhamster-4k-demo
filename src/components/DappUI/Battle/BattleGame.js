@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import { buildInitialUnits } from "@/lib/unitBuilder"; // Make sure this exists
+import { buildInitialUnits } from "../../lib/unitBuilder"; // Make sure this exists
 
 export default function BattleGame({ mode }) {
   const [stacks, setStacks] = useState(buildInitialUnits());

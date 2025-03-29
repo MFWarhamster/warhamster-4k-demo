@@ -2,9 +2,27 @@
 import React, { useState, useEffect } from "react";
 
 export default function BattleGame({ mode }) {
+  const [stacks, setStacks] = useState({ attacker: [], defender: [] });
+  const [turnIndex, setTurnIndex] = useState(0);
+  const [round, setRound] = useState(1);
+  const [selectedUnitId, setSelectedUnitId] = useState(null);
+  const [hoveredUnit, setHoveredUnit] = useState(null);
+  const [log, setLog] = useState([]);
+  const [selectedArmyIndex, setSelectedArmyIndex] = useState(0);
 
   useEffect(() => {
-    setStacks(buildInitialUnits());
+    // TODO: Replace this with real NFT stack builder
+    const mockUnits = {
+      attacker: [
+        { id: "A-1", team: "attacker", row: 0, col: 0, HP: 10, Melee: 3, Range: 2, Speed: 4, alive: true, stance: "forward" },
+        { id: "A-2", team: "attacker", row: 1, col: 0, HP: 10, Melee: 2, Range: 3, Speed: 5, alive: true, stance: "forward" },
+      ],
+      defender: [
+        { id: "D-1", team: "defender", row: 0, col: 7, HP: 10, Melee: 4, Range: 1, Speed: 3, alive: true, stance: "forward" },
+        { id: "D-2", team: "defender", row: 1, col: 7, HP: 10, Melee: 3, Range: 2, Speed: 2, alive: true, stance: "forward" },
+      ]
+    };
+    setStacks(mockUnits);
   }, [selectedArmyIndex]);
 
   const allUnits = [...stacks.attacker, ...stacks.defender]

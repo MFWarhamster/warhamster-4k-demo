@@ -97,7 +97,6 @@ export default function BattleGame({ mode }) {
     }, 1000);
 
     return () => clearTimeout(timeout);
-  };
   }, [turnIndex, stacks]);
 
   return (
@@ -161,4 +160,4 @@ export default function BattleGame({ mode }) {
       </div>
     </div>
   );
-}
+}//

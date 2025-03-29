@@ -160,4 +160,4 @@ export default function BattleGame({ mode }) {
       </div>
     </div>
   );
-}//
+}

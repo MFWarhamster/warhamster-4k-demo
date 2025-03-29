@@ -1,11 +1,15 @@
 "use client";
+import React, { useState, useEffect } from "react";
+import { buildInitialUnits } from "@/lib/unitBuilder"; // Make sure this exists
 
 export default function BattleGame({ mode }) {
-
-}
-
-
-  const [stacks, setStacks] = useState(buildInitialUnits);
+  const [stacks, setStacks] = useState(buildInitialUnits());
+  const [turnIndex, setTurnIndex] = useState(0);
+  const [round, setRound] = useState(1);
+  const [selectedUnitId, setSelectedUnitId] = useState(null);
+  const [hoveredUnit, setHoveredUnit] = useState(null);
+  const [log, setLog] = useState([]);
+  const [selectedArmyIndex, setSelectedArmyIndex] = useState(0); // Optional if using army list
 
   useEffect(() => {
     setStacks(buildInitialUnits());
@@ -156,3 +160,4 @@ export default function BattleGame({ mode }) {
       </div>
     </div>
   );
+}

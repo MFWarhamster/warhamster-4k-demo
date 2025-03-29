@@ -2,13 +2,6 @@
 import React, { useState, useEffect } from "react";
 
 export default function BattleGame({ mode }) {
-  const [stacks, setStacks] = useState(buildInitialUnits());
-  const [turnIndex, setTurnIndex] = useState(0);
-  const [round, setRound] = useState(1);
-  const [selectedUnitId, setSelectedUnitId] = useState(null);
-  const [hoveredUnit, setHoveredUnit] = useState(null);
-  const [log, setLog] = useState([]);
-  const [selectedArmyIndex, setSelectedArmyIndex] = useState(0); // Optional if using army list
 
   useEffect(() => {
     setStacks(buildInitialUnits());

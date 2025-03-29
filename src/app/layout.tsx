@@ -1,19 +1,13 @@
-import './globals.css';
-import { GameProvider } from '../components/GameContext';
+import React from "react";
 
-export const metadata = {
-  title: 'Warhamster 4K dApp',
-  description: 'Turn-based crypto war game!',
-};
+interface LayoutProps {
+  children: React.ReactNode;
+}
 
-export default function RootLayout({ children }) {
+export default function Layout({ children }: LayoutProps) {
   return (
-    <html lang="en">
-      <body>
-        <GameProvider>
-          {children}
-        </GameProvider>
-      </body>
+    <html>
+      <body>{children}</body>
     </html>
   );
 }
